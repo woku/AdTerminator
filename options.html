@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+    <title>广告终结者选项</title>
+    <script type="text/javascript" src="jquery-ui/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="options.js" charset="utf-8"></script>
+    
+    <script type="text/javascript" src="i18n.js" charset="utf-8"></script>
+    <style type="text/css" media="screen">
+    body {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		background-color: #EAEFEB;
+		background-size: 100% 219px;
+		background-repeat: no-repeat;
+		font-weight: 400;
+		color: #525355;
+		-webkit-font-smoothing: antialiased;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 15px;
+line-height: 18px;
+	}
+	body:before {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+z-index: -1;
+width: 100%;
+height: 250px;
+content: "";
+background: #4BAD00;
+}
+	.global-header {
+width: 100%;
+margin: 0;
+padding: 50px 0;
+font-family: "ProximaNova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 16px;
+}
+.global-header nav {
+position: relative;
+z-index: 1000;
+max-width: 930px;
+margin: 0 auto;
+}
+.container {
+width: 932px;
+margin: 0 auto;
+}
+#tabs {
+	background: white;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+-webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+padding: 20px;
+margin: 0 0 20px; }
+.nav {
+position: relative;
+-webkit-border-radius: 4px 4px 0 0;
+border-radius: 4px 4px 0 0;
+background: #EFF2F5;
+margin: -20px -20px 20px;
+padding: 14px 0px 14px 64px;
+border-bottom: 1px solid #C0C7CD;
+min-height: 18px;
+}
+.nav .tabs {
+background: none;
+border-bottom: none;
+height: auto;
+float: right;
+width: auto;
+margin-top: -20px;
+margin-right: 10px;
+padding: 0;
+list-style: none;
+}
+.tabs:before, .tabs:after {
+display: table;
+content: "";
+}
+.tabs:after {
+clear: both;
+}
+.tabs > li {
+position: relative;
+top: 1px;
+list-style: none;
+margin-bottom: -1px;
+float: left;
+line-height: 18px;
+}
+.tabs li > a {
+height: 29px;
+line-height: 1;
+padding: 21px 24px 0;
+color: #AAB1B8;
+font-size: 14px;
+border-right: 1px solid transparent;
+border-left: 1px solid transparent;
+display: block;
+margin-right: 2px;
+-webkit-border-radius: 4px 4px 0 0;
+border-radius: 4px 4px 0 0;
+border: 1px solid transparent;
+text-decoration: none;
+font-weight: inherit;
+}
+.tabs .active > a {
+border: 1px solid #C0C7CD;
+border-top-color: transparent;
+border-bottom-color: transparent;
+font-weight: 500;
+padding-top: 20px;
+padding-bottom: 1px;
+color: #5D6369;
+-webkit-box-shadow: 0 -1px 0px 0px rgba(0, 0, 0, 0.18), 0 -1px 0px 1px rgba(0, 0, 0, 0.05);
+-moz-box-shadow: 0 -1px 0px 0px rgba(0, 0, 0, 0.18), 0 -1px 0px 1px rgba(0, 0, 0, 0.05);
+box-shadow: 0 -1px 0px 0px rgba(0, 0, 0, 0.18), 0 -1px 0px 1px rgba(0, 0, 0, 0.05);
+}
+.tabs > .active > a, .tabs > .active > a:hover {
+background-color: white;
+cursor: default;
+}
+.tab-content>.tab-pane{
+	display: none;
+}
+.tab-content>.active{
+	display: block;
+}
+.nav h5 {
+margin: 0;
+font-size: 18px;
+font-weight: 500;
+color: #5D6369;
+}
+a.logo{
+	font-size: 30px;
+	font-weight: 200;
+	line-height: 1.25;
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+	background: url('icons/abp-48.png') no-repeat;
+	padding: 5px 0 5px 50px;
+}
+.alert{
+	padding: 8px 35px 8px 14px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: #FCF8E3;
+	border: 1px solid #FBEED5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #C09853;
+}
+#subscriptionTemplate,
+#addSubscriptionContainer,
+#customSubscriptionContainer
+{
+  display: none;
+}
+
+#acceptableAdsContainer
+{
+  margin-top: 10px;
+  display: none;
+}
+
+#acceptableAdsLink,
+#acceptableAdsDocs
+{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.subscription
+{
+  margin: 3px 0px;
+  background: #F8F8F8;
+border: 1px solid #DDD;
+padding: 4px 10px;
+}
+.subscription:hover {
+border: 1px solid #9EDD69;
+}
+
+.subscriptionRemoveButton,
+.subscriptionEnabledContainer,
+.subscriptionTitle
+{
+  margin-right: 1em;
+}
+
+.subscriptionRemoveButton
+{
+  font-weight: normal !important;
+  font-size: 20px !important;
+  color: #FF0000 !important;
+  border: none !important;
+  outline: none !important;
+  background: none !important;
+}
+
+.subscriptionUpdate
+{
+  color: #B0B0B0;
+}
+.subscriptionUpdate.error
+{
+  color: #FF0000;
+}
+
+#rawFilters {
+  display: none;
+}
+
+.okMsg {
+    display: none;
+    color: #ffffff;
+    background: #30e030;
+    font-weight: bold;
+    padding: 3px;
+}
+
+.errMsg {
+    display: none;
+    color: #ffffff;
+    background: #e03030;
+    font-weight:bold;
+    padding:3px;
+}
+
+/* Filter list entry status message */
+.flMsg {
+    display: none;
+    color: #b0b0b0;
+}
+.btn {
+cursor: pointer;
+display: inline-block;
+background-color: #E6E6E6;
+background-repeat: no-repeat;
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), color-stop(25%, white), to(#E6E6E6));
+background-image: -webkit-linear-gradient(white, white 25%, #E6E6E6);
+background-image: -o-linear-gradient(white, white 25%, #E6E6E6);
+background-image: linear-gradient(white, white 25%, #E6E6E6);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+padding: 7px 10px 5px;
+text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+color: #333;
+font-size: 13px;
+line-height: normal;
+border: 1px solid #CCC;
+border-bottom-color: #BBB;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+-webkit-transition: 0.1s linear all;
+}
+.btn:hover {
+background-position: 0 -15px;
+color: #333;
+text-decoration: none;
+}
+[class^="icon-"]{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-top: 1px;
+	line-height: 14px;
+	vertical-align: text-top;
+	background-repeat: no-repeat;
+}
+.icon-refresh{
+	background: url('/img/refresh.png');
+}
+.icon-add{
+	background: url('/img/add.png');
+}
+.icon-remove{
+	background: url('/img/remove.png');
+}
+select {
+width: 220px;
+background-color: white;
+border: 1px solid #CCC;
+height: 30px;
+line-height: 30px;
+}
+input[type="text"]{
+background-color: white;
+border: 1px solid #CCC;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+transition: border linear 0.2s, box-shadow linear 0.2s;
+display: inline-block;
+margin-bottom: 0;
+vertical-align: middle;
+height: 20px;
+padding: 4px 6px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+select[multiple], select[size] {
+height: auto;
+}
+.checkbox {
+min-height: 20px;
+padding-left: 20px;
+display: block;
+margin-bottom: 5px;
+font-size: 14px;
+font-weight: normal;
+line-height: 20px;
+cursor: pointer;
+}
+.checkbox input[type="checkbox"] {
+float: left;
+margin-left: -20px;
+cursor: pointer;
+vertical-align: middle;
+}
+ </style>
+</head>
+<body>
+	<header class="global-header">
+		<nav class="global-nav">
+			<a href="http://woku1.com/adt" class="logo" target="_blank" title="广告终结者(Ad Terminator)">
+				广告终结者(Ad Terminator)
+			</a>
+		</nav>
+	</header>
+	<div class="content">
+	
+<div class="container">
+	
+	<div class="row">
+		<div id="tabs">
+			<div class="nav">
+				<ul class="tabs">
+				    <li class="active">
+				    	<a href="#tab-filterlists" data-toggle="tab"><span class="i18n_filter_lists"></span></a>
+				    </li>
+				    <li>
+				    	<a href="#tab-userfilters" data-toggle="tab"><span class="i18n_add_your_own_filters"></span></a>
+				    </li>
+				    <li>
+				    	<a href="#tab-whitelisted" data-toggle="tab"><span class="i18n_whitelisted_domains"></span></a>
+				    </li>
+				    <li>
+				    	<a href="#tab-general" data-toggle="tab"><span class="i18n_general"></span></a>
+				    </li>
+				</ul>
+				<h5>ADT设置页面</h5>
+			</div>
+			<div class="tab-content">
+		  <div id="tab-filterlists" class="tab-pane active">
+		    <div class="alert">
+		      <span class="i18n_enable_only_the"></span>
+		    </div>
+		    <p>
+		      <span class="i18n_out_of_date_lists"></span>
+		      <button id="updateFilterLists" class="refreshButton btn">
+		      	<i class="icon-refresh"></i>
+		      	<span class="i18n_update_now"></span>
+		      </button>
+		      <br/>
+
+		      <!-- Subscription entry template -->
+		      <div id="subscriptionTemplate" class="subscription">
+		        <button class="i18n_filters_subscription_delete_label subscriptionRemoveButton"></button>
+		        <span class="subscriptionEnabledContainer">
+		          <input class="subscriptionEnabled" type="checkbox" /> <span class="i18n_filters_subscription_enabled_label"></span>
+		        </span>
+		        <a class="subscriptionTitle"></a>
+		        <span class="subscriptionUpdate"></span>
+		      </div>
+
+		      <!-- Placeholder for list of subscriptions -->
+		      <div id="filterLists"></div>
+		      <br />
+
+		      <!-- Placeholder for user's filter list URLs -->
+		      <div id="userFilterLists" style="margin-bottom: 8px"></div>
+
+		      <p id="addSubscriptionButton">
+		        <button id="startSubscriptionSelection" class="addButton btn">
+		        	<i class="icon-add"></i>
+		        	<span class="i18n_filters_addSubscription_label"></span>
+		        </button>
+		      </p>
+		      <div id="addSubscriptionContainer">
+		        <span class="i18n_subscriptionSelection_subscriptionSelector_label"></span><br />
+		        <select id="subscriptionSelector" style="width:500px"></select>
+		        <button id="addSubscription" class="addButton btn">
+		        	<i class="icon-add"></i>
+		        	<span class="i18n_filters_addSubscriptionAdd_label"></span>
+		        </button>
+		      </div>
+		      <div id="customSubscriptionContainer">
+		        <p>
+		          <span class="i18n_subscriptionSelection_title_label"></span><br />
+		          <input type="text" id="customSubscriptionTitle" style="width:485px" />
+		        </p>
+		        <p>
+		          <span class="i18n_subscriptionSelection_location_label"></span><br />
+		          <input type="text" id="customSubscriptionLocation" style="width:485px" />
+		        </p>
+		      </div>
+
+		      <div id="acceptableAdsContainer">
+		        <input type="checkbox" id="acceptableAds" />
+		        <span class="i18n_filters_acceptableAds2_label"></span>
+		        <a id="acceptableAdsLink" href="#" target="_blank" class="i18n_filters_viewList_label"></a>
+		        <a id="acceptableAdsDocs" href="#" target="_blank" class="i18n_filters_readMore_label"></a>
+		      </div>
+		    </p>
+		  </div><!--tab-filterlists End-->
+		  <div id="tab-whitelisted" class="tab-pane">
+		  	<div class="alert">
+		  		<p class="i18n_disabled_for_these_domains"></p>
+		  	</div>
+		    
+
+		    <form id="whitelistForm" action="#">
+		    <table>
+		      <tr>
+		        <td style="max-width:100%">
+		          <input type="text" value="" id="newWhitelistDomain" style="width:485px;">
+		        </td>
+		        <td>
+		          <button class="addButton btn" type="submit">
+		          	<i class="icon-add"></i>
+		          	<span class="i18n_add_domain_button"></span>
+		          </button>
+		        </td>
+		      </tr>
+
+		      <tr>
+		        <td>
+		          <select id="excludedDomainsBox" size="10" multiple style="width:500px; background: white;"></select>
+		        </td>
+		        <td>
+		          <button id="removeWhitelist" class="removeButton btn">
+		          	<i class="icon-remove"></i>
+		          	<span class="i18n_remove_button"></span>
+		          </button>
+		        </td>
+		      </tr>
+		    </table>
+		    </form>
+		  </div><!--tab-whitelisted End-->
+		  <div id="tab-userfilters" class="tab-pane">
+		    <p class="i18n_filter_must_follow_syntax">"http://adblockplus.org/en/filters"</p>
+
+		    <form id="customFilterForm" action="#">
+		    <table>
+		      <tr>
+		        <td>
+		          <input type="text" value="" id="newFilter" style="width:485px">
+		        </td>
+		        <td>
+		          <button class="addButton btn" type="submit">
+		          	<i class="icon-add"></i>
+		          	<span class="i18n_add_filter_button"></span>
+		          </button>
+		        </td>
+		      </tr>
+		      <tr>
+		        <td>
+		          <select id="userFiltersBox" size="20" multiple style="width: 500px; background: white;"></select>
+		        </td>
+		        <td>
+		          <button id="removeCustomFilter" class="removeButton btn">
+		          	<i class="icon-remove"></i>
+		          	<span class="i18n_remove_button"></span>
+		          </button>
+		        </td>
+		      </tr>
+		      <tr>
+		        <td>
+		          <div style="font-size: 90%; text-align: right"><a id="rawFiltersButton" href="#"><span class="i18n_edit_filters_raw"></span></a></div>
+		        </td>
+		      </tr>
+		      <tr id="rawFilters">
+		        <td>
+		          <div style="width: 500px">
+		            <textarea id="rawFiltersText" style="width: 100%; height: 300px"></textarea>
+		          </div>
+		        </td>
+		        <td>
+		          <div><button id="importRawFilters" class="btn"><span class="i18n_apply_changes"></span></button></div>
+		        </td>
+		      </tr>
+		    </table>
+		    </form>
+		  </div><!--tab-userfilters-->		 
+		  
+		  <div id="tab-general" class="tab-pane">
+		    <p>
+		      <label class="checkbox" id="shouldShowIconContainer">
+		        <input type="checkbox" id="shouldShowIcon" /><span class="i18n_show_icon"></span>
+		      </label>
+		      <label class="checkbox" id="shouldShowBlockElementMenuContainer">
+		        <input type="checkbox" id="shouldShowBlockElementMenu" /><span class="i18n_show_block_element_menu"></span>
+		      </label>
+		      <label class="checkbox" id="hidePlaceholdersContainer">
+		        <input type="checkbox" id="hidePlaceholders" /><span class="i18n_overlay_hideplaceholders_label"></span>
+		      </label>
+		    </p>
+
+		    <p class="i18n_found_a_bug">"https://adblockplus.org/forum/viewforum.php?f=10"</p>
+		  </div><!--tab-general--> 
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
