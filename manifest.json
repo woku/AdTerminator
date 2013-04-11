@@ -9,7 +9,7 @@
       "run_at": "document_start"
    }, {
       "all_frames": true,
-      "js": [ "include.postload.js" ],
+      "js": [ "include.postload.js","js/videoblock.js" ],
       "matches": [ "http://*/*", "https://*/*" ],
       "run_at": "document_end"
    }, {
@@ -19,7 +19,7 @@
       "run_at": "document_end"
       } ],
    "default_locale": "zh_CN",
-   "description": "清除网页上的所有广告：浮动广告，购物广告，恶意弹窗，跟踪代码，视频广告。让你浏览网页更快更清爽。广告终结者，你唯一需要的广告插件",
+   "description": "__MSG_description__",
    "icons": {
       "128": "icons/abp-128.png",
       "48":"icons/abp-48.png",
@@ -29,7 +29,7 @@
    },
    "manifest_version": 2,
    "minimum_chrome_version": "18.0",
-   "name": "广告终结者",
+   "name": "__MSG_name__",
    "options_page": "options.html",
    "page_action": {
       "default_icon": "icons/abp-32.png",
@@ -37,6 +37,6 @@
       "default_title": "广告终结者"
    },
    "permissions": [ "tabs", "http://*/*", "https://*/*", "contextMenus", "webRequest", "webRequestBlocking", "webNavigation", "unlimitedStorage" ],
-   "version": "5.0.0",
+   "version": "2.0.4",
    "web_accessible_resources": [ "block.html" ]
 }

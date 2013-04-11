@@ -63,6 +63,7 @@ function loadOptions()
   initCheckbox("shouldShowIcon");
   initCheckbox("shouldShowBlockElementMenu");
   initCheckbox("hidePlaceholders");
+  initCheckbox("shouldShowVideoTips");
 
   // Load recommended subscriptions
   loadRecommendations();

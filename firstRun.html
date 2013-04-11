@@ -1,66 +1,427 @@
 <!DOCTYPE html>
-
-<!--
-  - This file is part of the Adblock Plus extension,
-  - Copyright (C) 2006-2012 Eyeo GmbH
-  -
-  - Adblock Plus is free software: you can redistribute it and/or modify
-  - it under the terms of the GNU General Public License version 3 as
-  - published by the Free Software Foundation.
-  -
-  - Adblock Plus is distributed in the hope that it will be useful,
-  - but WITHOUT ANY WARRANTY; without even the implied warranty of
-  - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  - GNU General Public License for more details.
-  -
-  - You should have received a copy of the GNU General Public License
-  - along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <script type="text/javascript" src="i18n.js" charset="utf-8"></script>
   <script type="text/javascript" src="firstRun.js" charset="utf-8"></script>
-  <link href="/skin/firstRun.css" type="text/css" rel="stylesheet" />
-</head>
+     <style type="text/css" media="screen">
+    body {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		background-color: #EAEFEB;
+		background-size: 100% 219px;
+		background-repeat: no-repeat;
+		font-weight: 400;
+		color: #525355;
+		-webkit-font-smoothing: antialiased;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 15px;
+line-height: 18px;
+	}
+	body:before {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+z-index: -1;
+width: 100%;
+height: 250px;
+content: "";
+background: #4BAD00;
+}
+	.global-header {
+width: 100%;
+margin: 0;
+padding: 50px 0;
+font-family: "ProximaNova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 16px;
+}
+.global-header nav {
+position: relative;
+z-index: 1000;
+max-width: 930px;
+margin: 0 auto;
+}
+.container {
+width: 932px;
+margin: 0 auto;
+}
+#tabs {
+	background: white;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+-webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+padding: 20px;
+margin: 0 0 20px; }
+.nav {
+position: relative;
+-webkit-border-radius: 4px 4px 0 0;
+border-radius: 4px 4px 0 0;
+background: #EFF2F5;
+margin: -20px -20px 20px;
+padding: 14px 0px 14px 64px;
+border-bottom: 1px solid #C0C7CD;
+min-height: 18px;
+}
+.nav .tabs {
+background: none;
+border-bottom: none;
+height: auto;
+float: right;
+width: auto;
+margin-top: -20px;
+margin-right: 10px;
+padding: 0;
+list-style: none;
+}
+.tabs:before, .tabs:after {
+display: table;
+content: "";
+}
+.tabs:after {
+clear: both;
+}
+.tabs > li {
+position: relative;
+top: 1px;
+list-style: none;
+margin-bottom: -1px;
+float: left;
+line-height: 18px;
+}
+.tabs li > a {
+height: 29px;
+line-height: 1;
+padding: 21px 24px 0;
+color: #AAB1B8;
+font-size: 14px;
+border-right: 1px solid transparent;
+border-left: 1px solid transparent;
+display: block;
+margin-right: 2px;
+-webkit-border-radius: 4px 4px 0 0;
+border-radius: 4px 4px 0 0;
+border: 1px solid transparent;
+text-decoration: none;
+font-weight: inherit;
+}
+.tabs .active > a {
+border: 1px solid #C0C7CD;
+border-top-color: transparent;
+border-bottom-color: transparent;
+font-weight: 500;
+padding-top: 20px;
+padding-bottom: 1px;
+color: #5D6369;
+-webkit-box-shadow: 0 -1px 0px 0px rgba(0, 0, 0, 0.18), 0 -1px 0px 1px rgba(0, 0, 0, 0.05);
+-moz-box-shadow: 0 -1px 0px 0px rgba(0, 0, 0, 0.18), 0 -1px 0px 1px rgba(0, 0, 0, 0.05);
+box-shadow: 0 -1px 0px 0px rgba(0, 0, 0, 0.18), 0 -1px 0px 1px rgba(0, 0, 0, 0.05);
+}
+.tabs > .active > a, .tabs > .active > a:hover {
+background-color: white;
+cursor: default;
+}
+.tab-content>.tab-pane{
+	display: none;
+}
+.tab-content>.active{
+	display: block;
+}
+.nav h5 {
+margin: 0;
+font-size: 18px;
+font-weight: 500;
+color: #5D6369;
+}
+a.logo{
+	font-size: 30px;
+	font-weight: 200;
+	line-height: 1.25;
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+	background: url('icons/abp-48.png') no-repeat;
+	padding: 5px 0 5px 50px;
+}
+.alert{
+	padding: 8px 35px 8px 14px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: #FCF8E3;
+	border: 1px solid #FBEED5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #C09853;
+}
+#subscriptionTemplate,
+#addSubscriptionContainer,
+#customSubscriptionContainer
+{
+  display: none;
+}
+
+#acceptableAdsContainer
+{
+  margin-top: 10px;
+  display: none;
+}
+
+#acceptableAdsLink,
+#acceptableAdsDocs
+{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.subscription
+{
+  margin: 3px 0px;
+  background: #F8F8F8;
+border: 1px solid #DDD;
+padding: 4px 10px;
+}
+.subscription:hover {
+border: 1px solid #9EDD69;
+}
+
+.subscriptionRemoveButton,
+.subscriptionEnabledContainer,
+.subscriptionTitle
+{
+  margin-right: 1em;
+}
+
+.subscriptionRemoveButton
+{
+  font-weight: normal !important;
+  font-size: 20px !important;
+  color: #FF0000 !important;
+  border: none !important;
+  outline: none !important;
+  background: none !important;
+}
+
+.subscriptionUpdate
+{
+  color: #B0B0B0;
+}
+.subscriptionUpdate.error
+{
+  color: #FF0000;
+}
+
+#rawFilters {
+  display: none;
+}
+
+.okMsg {
+    display: none;
+    color: #ffffff;
+    background: #30e030;
+    font-weight: bold;
+    padding: 3px;
+}
+
+.errMsg {
+    display: none;
+    color: #ffffff;
+    background: #e03030;
+    font-weight:bold;
+    padding:3px;
+}
+
+/* Filter list entry status message */
+.flMsg {
+    display: none;
+    color: #b0b0b0;
+}
+.btn {
+cursor: pointer;
+display: inline-block;
+background-color: #E6E6E6;
+background-repeat: no-repeat;
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), color-stop(25%, white), to(#E6E6E6));
+background-image: -webkit-linear-gradient(white, white 25%, #E6E6E6);
+background-image: -o-linear-gradient(white, white 25%, #E6E6E6);
+background-image: linear-gradient(white, white 25%, #E6E6E6);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+padding: 7px 10px 5px;
+text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+color: #333;
+font-size: 13px;
+line-height: normal;
+border: 1px solid #CCC;
+border-bottom-color: #BBB;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+-webkit-transition: 0.1s linear all;
+}
+.btn:hover {
+background-position: 0 -15px;
+color: #333;
+text-decoration: none;
+}
+[class^="icon-"]{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-top: 1px;
+	line-height: 14px;
+	vertical-align: text-top;
+	background-repeat: no-repeat;
+}
+.icon-refresh{
+	background: url('/img/refresh.png');
+}
+.icon-add{
+	background: url('/img/add.png');
+}
+.icon-remove{
+	background: url('/img/remove.png');
+}
+select {
+width: 220px;
+background-color: white;
+border: 1px solid #CCC;
+height: 30px;
+line-height: 30px;
+}
+input[type="text"]{
+background-color: white;
+border: 1px solid #CCC;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+-o-transition: border linear 0.2s, box-shadow linear 0.2s;
+transition: border linear 0.2s, box-shadow linear 0.2s;
+display: inline-block;
+margin-bottom: 0;
+vertical-align: middle;
+height: 20px;
+padding: 4px 6px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+select[multiple], select[size] {
+height: auto;
+}
+.checkbox {
+min-height: 20px;
+padding-left: 20px;
+display: block;
+margin-bottom: 5px;
+font-size: 14px;
+font-weight: normal;
+line-height: 20px;
+cursor: pointer;
+}
+.checkbox input[type="checkbox"] {
+float: left;
+margin-left: -20px;
+cursor: pointer;
+vertical-align: middle;
+}
+#title-changelog{
+display: inline-block;
+float: right;
+margin-top: -18px;
+margin-right: 580px;
+}
+#tabs a,#tabs a:visited{
+	color: #7CB600;
+	text-decoration: none;
+}
+ </style>
+  </head>
 <body>
-  <h1 id="title">
-    <div id="title-main"></div>
-    <div id="title-changelog"><a class="i18n_firstRun_changelog"></a></div>
-  </h1>
+	<header class="global-header">
+		<nav class="global-nav">
+			<a href="http://woku1.com/adt" class="logo" target="_blank" title="广告终结者(Ad Terminator)">
+				广告终结者(Ad Terminator)
+			</a>
+		</nav>
+	</header>
+	<div class="content">
+		<div class="container">
+			<div class="row">
+				<div id="tabs">
+					<div class="nav">
+						<h5><div id="title-main"></div></h5>
+						<div id="title-changelog"><a class="i18n_firstRun_changelog" href="http://woku1.com/adt/report.html#history" target="_blank"></a></div>
+					</div>
+					<div class="tab-content">
+					<p id="dataCorruptionWarning" class="i18n_firstRun_dataCorruptionWarning" hidden="true">"http://woku1.com/adt/help.html"</p>
+						
+			  <h3>广告终结者是什么？</h3>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;广告终结者是一款参考各种广告过滤插件开发的功能全面的免费开源广告过滤工具。广告终结者让你不用再忍受网页上烦人的广告，不需要开通所谓的VIP，做任务，也不需要找各种功能不全的广告插件，广告终结者集成广告过滤的所有功能，是你唯一需要的必备广告过滤插件。</p>
+              <h3>广告终结者的功能</h3>
+              <ul style="list-style-type: disc;padding-left: 20px;">
+                <li>过滤网页上的各种类型广告</li>
+                <ul style="list-style-type: circle;padding-left: 20px;">
+                  <li>百度联盟等广告联盟的广告</li>
+                  <li>淘宝，天猫，京东等商城广告</li>
+                  <li>恶意弹窗广告</li>
+                  <li>各种影响网页阅读的浮动广告</li>
+                </ul>
+                <li>屏蔽视频广告</li>
+                <ul style="list-style-type: circle;padding-left: 20px;">
+                  <li>视频片头广告</li>
+                  <li>视频暂停广告</li>
+                  <li>视频下方的小广告</li>
 
-  <p id="dataCorruptionWarning" class="i18n_firstRun_dataCorruptionWarning" hidden="true"></p>
+                </ul>
+                <li>提升网页浏览体验</li>
+                <ul style="list-style-type: circle;padding-left: 20px;">
+                  <li>屏蔽广告，网页排版更整齐，更易阅读</li>
+                  <li>屏蔽跟踪代码，防止个人隐私泄露</li>
+                  <li>过滤广告、跟踪代码，网页加载速度更快</li>
+                </ul>
+              </ul>
+              <h3>支持我们</h3>
+              <p>&nbsp;&nbsp;目前广告终结者不接受捐款，免费开源，<strong>不要轻信任何付款信息！</strong>你可以通过以下方式支持我们：</p>
+              <ul style="list-style-type: disc;padding-left: 20px;">
+                <li>关注我们的微博</li>
+                <ul style="list-style-type: circle;padding-left: 20px;">
+                  <li><a href="http://weibo.com/liulanqichajian" target="_blank">新浪微博</a></li>
+                  <li><a href="http://t.qq.com/baotianshuai" target="_blank">腾讯微博</a></li>
+                  <li><a href="http://liulanqichajian.t.sohu.com/" target="_blank">搜狐微博</a></li>
+                  <li><a href="http://t.163.com/liulanqichajian" target="_blank">网易微博</a></li>
+                  <li>人人主页（稍后推出）</li>
+                  <li>微信关注（稍后推出）</li>
+                </ul>
+                <li>分享插件给好友</li>
+                <p>将我们的<a href="http://woku1.com/adt">插件主页</a>，Chrome WebStore的主页，分享给你的好友吧:)</p>
+                <ul style="list-style-type: circle;padding-left: 20px;">
+                  <li>插件主页地址：<a href="http://woku1.com/adt">http://woku1.com/adt</a></li>
+                  <li>Chrome商店地址</li>
+                </ul>
+                <li>给我们提建议和反馈问题</li>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;如果你发现插件有错误，不能正常工作可以给我报告问题。或者你发现其他广告过滤插件有的，而广告终结者没有的功能也可以给我提建议。如果你有任何的建议、改进方法也欢迎你给我们提建议。请移步到<a href="http://woku1.com/adt/report.html">这里</a></p>
+              </ul>
+              <h3>需要帮助？</h3>
+              <p>可以尝试到以下地址获取帮助</p>
+              <ul style="list-style-type: disc;padding-left: 20px;">
+                <li><a href="http://woku1.com/adt/help.html#install" target="_blank">安装教程</a></li>
+                <li><a href="http://woku1.com/adt/help.html#use" target="_blank">使用教程</a></li>
+                <li><a href="http://woku1.com/adt/help.html#problem" target="_blank">常见问题</a></li>
+              </ul>
 
-  <p class="i18n_firstRun_features_heading"></p>
-  <ul id="features">
-    <li class="i18n_firstRun_feature_betterSurfing"></li>
-    <li class="i18n_firstRun_feature_videoAds"></li>
-    <li class="i18n_firstRun_feature_acceptableAds"></li>
-  </ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-  <p id="acceptableAdsExplanation" class="i18n_firstRun_acceptableAdsExplanation"></p>
-
-  <div id="share1">
-    <p id="share-text1" class="i18n_firstRun_share1"></p>
-    <div id="share-images1">
-      <a class="share-image share-facebook" href="#" target="_blank"></a>
-      <a class="share-image share-twitter" href="#" target="_blank"></a>
-    </div>
-  </div>
-
-  <div id="share2">
-    <p id="share-text2" class="i18n_firstRun_share2"></p>
-    <div id="share-images2">
-      <a id="share-donate" class="i18n_firstRun_share2_donate" target="_blank"></a>
-      <span id="share2-connection" class="i18n_firstRun_share2_or"></span>
-      <a class="share-image share-facebook" href="#" target="_blank"></a>
-      <a class="share-image share-twitter" href="#" target="_blank"></a>
-    </div>
-  </div>
-
-  <div id="glass-pane">
-    <iframe id="share-popup" scrolling="no"></iframe>
-  </div>
 </body>
 </html>

@@ -121,7 +121,7 @@ function refreshIconAndContextMenu(tab)
   // Only show icon for pages we can influence (http: and https:)
   if(/^https?:/.test(tab.url))
   {
-    chrome.pageAction.setTitle({tabId: tab.id, title: "Adblock Plus"});
+    chrome.pageAction.setTitle({tabId: tab.id, title: "广告终结者"});
     if ("shouldShowIcon" in localStorage && localStorage["shouldShowIcon"] == "false")
       chrome.pageAction.hide(tab.id);
     else
@@ -572,6 +572,10 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse)
         return;
       }
       break;
+    case "should-show-video-tips":
+      var shouldVideoTips = typeof localStorage['shouldShowVideoTips'] == "undefined" ? true : localStorage['shouldShowVideoTips'] == "true"
+      sendResponse({enabled:shouldVideoTips});
+    break;
     case "add-filters":
       if (request.filters && request.filters.length)
       {
