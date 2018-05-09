@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<!--
+  - This file is part of Adblock Plus <http://adblockplus.org/>,
+  - Copyright (C) 2006-2013 Eyeo GmbH
+  -
+  - Adblock Plus is free software: you can redistribute it and/or modify
+  - it under the terms of the GNU General Public License version 3 as
+  - published by the Free Software Foundation.
+  -
+  - Adblock Plus is distributed in the hope that it will be useful,
+  - but WITHOUT ANY WARRANTY; without even the implied warranty of
+  - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  - GNU General Public License for more details.
+  -
+  - You should have received a copy of the GNU General Public License
+  - along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Block element</title>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript" src="i18n.js" charset="utf-8"></script>
+<script type="text/javascript" src="block.js" charset="utf-8"></script>
+<style type="text/css">
+.hover-lighter:hover{
+  opacity: .8;
+}
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.panel {
+  background-color: #fff;
+  border-radius: 3px;
+}
+.panel-heading {
+border-color: #eff2f7;
+font-size: 16px;
+font-weight: 400;
+background: #08ab10;
+text-transform: uppercase;
+padding: 13px 15px;
+border-bottom: 1px solid transparent;
+border-radius: 3px 3px 0px 0;
+color: #fff;
+height: 16px;
+}
+.panel-body {
+padding: 15px;
+height: 109px;
+}
+#filters{
+  display: block;
+width: 380px;
+height: 80px;
+padding: 4px 4px;
+font-size: 13px;
+color: #555;
+background-color: #fff;
+background-image: none;
+border: 1px solid #ccc;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+overflow: auto;
+}
+#filters:focus{
+  border: 1px solid #4EB61B;
+  outline: none !important;
+}
+.footer{
+  background-color: #eaeaec;
+  padding: 6px 0;
+  border-radius: 0 0  3px 3px;
+  text-align: right;
+  height: 31px;
+}
+button{
+  display: inline-block;
+margin-bottom: 0;
+font-weight: 400;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 6px 16px;
+font-size: 12px;
+line-height: 1.428571429;
+border-radius: 4px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+background-color: #08ab10;
+border-color: #08ab10;
+color: #FFFFFF;
+margin: 0 10px;
+}
+.introduction {
+color: #c2c2c2;
+font-size: 14px;
+padding-bottom: 5px;
+}
+.icon-add{
+  background: url(img/add-white.png);
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  vertical-align: text-top;
+}
+.icon-cancel{
+  background: url(img/cancel-white.png);
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  vertical-align: text-top;
+}
+.pull-right{
+  float: right;
+  
+}
+.close{
+  text-decoration: none;
+  color: #fff;
+}
+</style>
+</head>
+<body>
+<section class="panel">
+  <header class="panel-heading">
+    <span class="i18n_add_filters_msg"></span>
+  
+  </header>
+  <div class="panel-body">
+    <div class="introduction"><span class="i18n_add_filters_info"></span></div>
+    <textarea id="filters"></textarea>
+  </div>
+  <div class="footer">
+    <button id="addButton" class="hover-lighter">
+      <i class="icon-add"></i>
+      <span class="i18n_add"></span>
+    </button>
+    <button id="cancelButton" class="hover-lighter">
+      <i class="icon-cancel"></i>
+      <span class="i18n_cancel"></span>
+    </button>
+  </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<!--
+  - This file is part of the Adblock Plus web scripts,
+  - Copyright (C) 2006-2013 Eyeo GmbH
+  -
+  - Adblock Plus is free software: you can redistribute it and/or modify
+  - it under the terms of the GNU General Public License version 3 as
+  - published by the Free Software Foundation.
+  -
+  - Adblock Plus is distributed in the hope that it will be useful,
+  - but WITHOUT ANY WARRANTY; without even the implied warranty of
+  - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  - GNU General Public License for more details.
+  -
+  - You should have received a copy of the GNU General Public License
+  - along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<subscriptions>
+  <subscription title="ChinaList+EasyList(修正)"
+                specialization="默认规则"
+                url="http://sub.adtchrome.com/adt-chinalist-easylist.txt"
+                homepage="http://www.adtchrome.com/extension/adt-chinalist-easylist.html"
+                prefixes="zh"
+                author="HuoLeifeng"/>
+  <subscription title="EasyList"
+                specialization="适合只访问国外网站"
+                url="https://easylist-downloads.adblockplus.org/easylist.txt"
+                homepage="hhttps://easylist.adblockplus.org/"
+                prefixes="en"
+                author="tomasko126"/>
+  </subscriptions>

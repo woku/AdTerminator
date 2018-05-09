@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title class="i18n_firstRun_title"></title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="i18n.js"></script>
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="firstRun.js"></script>
+<style type="text/css">
+a{
+text-decoration: none;
+}
+html,body,ul,h1,section{
+margin: 0;
+padding: 0;
+border: 0;
+vertical-align: baseline;
+}
+ol, ul {
+list-style: none;
+}
+#top {
+width: 100%;
+height: 70px;
+background: #1abc9c;
+}
+#top .wrap {
+position: relative;
+height: 70px;
+}
+.wrap {
+width: 980px;
+margin: 0px auto;
+}
+#logo {
+background: url(http://www.adtchrome.com/extension/top.png) no-repeat;
+width: 290px;
+height: 70px;
+display: block;
+}
+#nav {
+position: absolute;
+right: 0px;
+top: 20px;
+}
+#nav li {
+float: left;
+margin-left: 10px;
+display: inline;
+}
+#nav li a {
+display: block;
+padding: 5px 10px 7px 10px;
+color: #fff;
+border-radius: 6px;
+font-size: 16px;
+}
+#newbie {
+width: 100%;
+background: #fef6e3;
+overflow: hidden;
+position: relative;
+padding-top: 50px;
+text-align:center;
+}
+.popboxbg{
+background-color: #000;
+opacity: .4;
+position: absolute;
+z-index: 9998;
+width: 100%;
+height: 100%;
+left: 0;
+top: 0;
+}
+.popbox{
+width: 500px;
+height: 200px;
+background-color: #eaeaec;
+border-radius: 8px;
+position: absolute;
+z-index: 9999;
+overflow: hidden;
+}
+.popbox .main{
+  width: 1600px;
+  height: 200px;
+}
+.progress {
+overflow: hidden;
+height: 10px;
+margin: 20px;
+background-color: #fff;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+.progress-bar {
+float: left;
+width: 0;
+height: 100%;
+font-size: 12px;
+line-height: 20px;
+color: #fff;
+text-align: center;
+background-color: #5cb85c;
+-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+-webkit-transition: width .3s ease;
+transition: width .6s ease;
+background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+background-size: 40px 40px;
+-webkit-animation: progress-bar-stripes 2s linear infinite;
+}
+
+@-webkit-keyframes progress-bar-stripes{
+  from {background-position:40px 0}
+  to {background-position:0 0}
+}
+@keyframes progress-bar-stripes{
+  from {background-position:40px 0}
+  to{ background-position:0 0}
+}
+.popbox .content{
+  padding: 10px;
+  float: left;
+  width: 480px;
+  display: inline-block;
+  height: 180px;
+}
+.popbox .tips{
+  padding-top: 50px;
+  text-align: center; 
+}
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+.radio label {
+display: inline;
+font-weight: 400;
+cursor: pointer;
+margin-bottom: 5px;
+}
+.radio {
+display: block;
+min-height: 20px;
+margin-top: 10px;
+margin-bottom: 10px;
+padding-left: 20px;
+}
+.radio input[type=radio] {
+float: left;
+margin-left: -20px;
+margin-top: 1px;
+line-height: normal;
+box-sizing: border-box;
+padding: 0;
+}
+.sure-btn{
+background-color: #428bca;
+border-color: #357ebd;
+color: #fff;
+display: inline-block;
+margin-bottom: 0;
+font-weight: 400;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+border-radius: 4px;
+-webkit-user-select: none;
+margin-left: 200px;
+}
+.sure-btn:hover{
+color: #fff;
+background-color: #3276b1;
+border-color: #285e8e;
+}
+.sure-btn[disabled]{
+cursor: not-allowed;
+pointer-events: none;
+opacity: .65;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+.browser-warn{
+  min-height: 80px;
+}
+#features{
+width: 100%;
+height: 40px;
+position: relative;
+top: -27px;
+background: url(../img/firstrun-background.png) repeat-x 0px 0px;
+padding-top: 30px;
+}
+#support{
+  width: 100%;
+height: 100px;
+position: relative;
+top: -47px;
+background: url(../img/firstrun-background_1.png) repeat-x 0px 0px;
+padding-top: 30px;
+}
+.col4{
+  width: 300px;
+  float: left;
+}
+.col3{
+  width: 240px;
+  float: left;
+}
+.features-content{
+  background: #aee0f1;
+  position: relative;
+  top: -27px;
+  height: 450px;
+}
+.support-content{
+  background: #CCC0A9;
+  position: relative;
+  top: -47px;
+  height: 300px;
+}
+h1{
+  text-align:center;padding-bottom: 30px;
+}
+
+.round>i{
+background: url(img/introduce_footer.png);
+display: inline-block;
+width: 35px;
+height: 35px;
+margin: 7px;
+}
+.home-page-icon{
+}
+.round>i.suggest-message-icon{
+background-position: -38px 0;
+}
+.round>i.sina-weibo-icon{
+background-position: -61px 0;
+background-size: 130px 35px;
+}
+.round>i.solve-problem-icon{
+background-position: -120px 0;
+}
+.elink{
+  position: relative;
+top: -15px;
+font-size: 24px;
+color: white;
+}
+#sideToolbar-up {
+position: fixed;
+right: 20px;
+bottom: -1px;
+padding: 10px 14px;
+border: 1px solid #DDD;
+background: #FFF;
+color: #AAA;
+display: none;
+}
+#sideToolbar-up:hover {
+background: #f3f3f3;
+text-decoration: none;
+}
+.round {
+border-radius: 40px;
+background-color: #fff;
+display: inline-block;
+width: 50px;
+height: 52px;
+}
+</style>
+  </head>
+  <body style="background: #CCC0A9;">
+    <section id="top">
+      <div class="wrap">
+        <a id="logo" href="http://www.adtchrome.com" target="_blank"></a>
+        <ul id="nav">
+          <li><a href="http://www.adtchrome.com" target="_blank">首页</a></li>
+          <li><a href="#newbie">新手教程</a></li>
+          <li><a href="#features">功能介绍</a></li>
+          <li><a href="#support">帮助支持</a></li>
+        </ul>
+      </div>
+    </section>
+    <section id="newbie">
+      <h1>去广告就是这么简单……</h1>
+      <img src="http://www.adtchrome.com/extension/image_introduce.png">
+    </section>
+    <section id="features">
+    </section>
+    <section class="features-content">
+      <div class="wrap">
+        <h1>全新的广告终结者给你不一样的体验</h1>
+        <div class="col4">
+          <img src="http://www.adtchrome.com/extension/img_rocket.png" alt="更强悍的过滤性能">
+          <h3>更强悍的过滤性能</h3>
+          <p>我们基于ABP的过滤内核，改写了部分广告过滤算法，优化广告过滤的性能，打开网页速度飞快。</p>
+        </div>
+        <div class="col4" style="margin: 0 40px;">
+          <img src="http://www.adtchrome.com/extension/img_book.png" alt="更友好的用户体验">
+          <h3>更友好的用户体验</h3>
+          <p>我们重新设计了更加简洁、友好的界面，更容易上手。</p>
+        </div>
+        <div class="col4">
+          <img src="http://www.adtchrome.com/extension/img_bike.png" alt="轻量、快速、稳定">
+          <h3>轻量、快速、稳定</h3>
+          <p>广告终结者大小只有0.2M，但是过滤网页上99%以上的广告，足够轻量，减少系统负担</p>
+        </div>
+      </div>
+    </section>
+    <section id="support">
+    </section>
+    <section class="support-content">
+      <div class="wrap">
+        <h1>还有完善的帮助与支持……</h1>
+        <div class="col3"><a href="http://www.adtchrome.com" target="_blank" class="round"><i class="home-page-icon"></i></a>
+          <a class="elink" href="http://www.adtchrome.com" target="_blank">官方网站</a>
+        </div>
+        <div class="col3"><a href="http://www.adtchrome.com/feedback.html" target="_blank" class="round"><i class="suggest-message-icon"></i></a>
+          <a class="elink" href="http://www.adtchrome.com/feedback.html" target="_blank">反馈留言</a>
+        </div>
+        <div class="col3"><a href="http://weibo.com/liulanqichajian" target="_blank" class="round"><i class="sina-weibo-icon"></i></a>
+          <a class="elink" href="http://weibo.com/liulanqichajian" target="_blank">新浪微博</a>
+        </div>
+        <div class="col3"><a href="http://www.adtchrome.com/help" target="_blank" class="round"><i class="solve-problem-icon"></i></a>
+          <a class="elink" href="http://www.adtchrome.com/help" target="_blank">问题解答</a>
+        </div>
+      </div>
+    </section>
+    <a id="sideToolbar-up" href="javascript:void(0)">回顶部</a>
+    <div class="popboxbg"></div>
+    <div class="popbox">
+      <div class="main">
+        <!--<div class="content" id="chooserules">
+          <h4 style="text-align:center;margin: 12px 0;">选择需要订阅的过滤规则</h4>
+          <span style="color:red">需要稳定，不想折腾，建议选择过滤网页广告</span>
+          <div class="radio">
+            <label>
+              <input type="radio" name="chooserules" value="1">
+            过滤网页广告<span>（所有网页广告以及<span style="color:red">部分视频广告</span>，稳定快速）</span>
+            </label>
+          </div>
+
+          <div class="radio">
+            <label>
+              <input type="radio" name="chooserules"  value="2">
+            过滤网页＋视频广告<span>（包含更强的视频过滤规则，但不稳定，可能使视频无法播放）</span>
+            </label>
+          </div>
+          <div>
+            <button type="button" class="sure-btn" disabled="disabled">确定</button>
+          </div>
+        </div>-->
+
+        <div class="content">
+          <div class="tips">广告终结者正在配置中，请勿关闭页面</div>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 1%">
+            </div>
+          </div>
+          <div style="text-align:center">长时间没有反应，请<a href="http://www.adtchrome.com/help/index.html#help3" target="_blank">查看这里</a></div>
+        </div>
+        <div class="content">
+          <h4 style="text-align:center;margin: 12px 0;">为了更好地屏蔽广告，请认真阅读新手教程</h4>
+          <div class="browser-warn">
+            <div id="chrome-warn" style="display:none">1.chrome版本为33或者以上的用户，需要<span style="color:red">修改内置的flash插件</span>，否则启用视频过滤会导致视频无法加载，请查看<a style="color:red" href="http://www.adtchrome.com/help/index.html#help2-1" target="_blank">详细设置方法</a><br>2.360浏览器需要开启极速模式，注意事项请查看<a href="http://www.adtchrome.com/help/index.html#help2-1">这里</a><br>3.由于视频广告过滤功能不稳定，该功能<span style="color:red">默认关闭</span>，需要<a href="http://www.adtchrome.com/help/index.html#help2-4">手动启用</a>
+            </div>
+            <div id="lbbrowser-warn" style="display:none">猎豹浏览器的用户需要关闭自带的广告的过滤功能，如果网页广告无法过滤，请查看是否启用了极速模式。点击<a href="http://www.adtchrome.com/help/index.html#help2-1">了解详情</a></div>
+            <div id="360se-warn" style="display:none">360浏览器的用户需要停止360自带的广告过滤功能，并且<span>启用极速模式</span>。请查看360安全浏览器的<a href="http://www.adtchrome.com/help/index.html#help2-1" target="_blank">详细设置</a></div>
+            <div id="360ee-warn" style="display:none">360浏览器的用户需要停止360自带的广告过滤功能，并且<span>启用极速模式</span>。请查看360极速浏览器的<a href="http://www.adtchrome.com/help/index.html#help2-1" target="_blank">详细设置</a></div>
+          </div>
+          <button type="button" class="sure-btn">确定</button>
+        </div>
+      </div>
+    </div>
+    <iframe style="display: none" src="http://2015.adtchrome.com/adt-new-tongji.html"></iframe>
+  </body>
+</html>

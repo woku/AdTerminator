@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css" media="screen">
+.hover-lighter:hover{
+  opacity: .8;
+}
+body {
+  min-width: 190px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "GothamMedium", Helvetica, Arial, sans-serif,'宋体';
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  border-radius: 0 0 6px 6px;
+}
+.menu li {
+  background-size: 20px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.214;
+  margin-top: 1px;
+  border-top: 1px dashed #ccc;
+  padding: 11px 10px 11px 20px;
+  position: relative;
+  color: #34495e;
+}
+#click-block-cancel{
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 1px;
+  padding: 11px 10px 11px 20px;
+  position: relative;
+  color: #34495e;
+  border-top: 1px dashed #a5a4a1;
+}
+#click-block-cancel:hover{
+  background-color: #ECF0F1;
+}
+.menu li:hover{
+  background-color: #efefef;
+}
+.menu li:first-child {
+  margin-top: 0;
+}
+.menu li:last-child {
+  border-radius: 0 0 2px 2px;
+}
+.header{
+  position: relative;
+  background: #08ab10;
+  border-radius: 2px 2px 0 0;
+  color: #ffffff;
+  font-size: 14px;
+}
+.header .footer a{
+  text-decoration: none;
+  color: #ffffff;
+}
+.header strong{
+  font-size: 18px;
+}
+.header:hover{
+  background-color: #4EB61B;
+}
+.header .top{
+  padding: 11px 10px 9px 36px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+.footer{
+  position: relative;
+  background: #08ab10;
+  border-radius: 0 0 2px 2px;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer .footer-content{
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.footer .footer-content:hover{
+  background-color: #4EB61B;
+}
+.footer .footer-content .back-icon{
+  background-image: url(img/back.png);
+  width:16px;
+  height:16px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-right: 5px;
+}
+.footer .footer-content .help-icon{
+  background-image: url(img/help.png);
+  width:16px;
+  height:16px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-right: 5px;
+}
+.menu-icon {
+  float: left;
+  padding: 0px 22px 0 0;
+}
+.menu-content {
+  padding-top: 1px;
+  overflow: hidden;
+}
+.menu-name {
+  font-size: 13px;
+  margin: 1px 0;
+}
+
+.caret{
+  position: absolute;
+  right: 15px;
+  top: 16px;
+  vertical-align: middle;
+  border-top: 8px solid;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+}
+.caret.left{
+  border-left: 8px solid;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+.checkbox-green,.block-icon,.cancel-icon,.help-icon,.setting-icon,.block-video-icon {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  background: url(img/green.png) no-repeat;
+  background-position: 0;
+  border: none;
+  cursor: pointer;
+  margin-right: 8px;
+}
+.checkbox-green.hover {
+  background-position: -15px 0;
+}
+.checkbox-green.checked {
+  background-position: -31px 0;
+}
+.menu-icon.block-icon{
+  background-position: -63px 0;  
+}
+.menu-icon.cancel-icon{
+  background-position: -81px 0;
+  margin-left: 24px;  
+}
+.menu-icon.help-icon{
+background-position: -99px 0;  
+}
+.menu-icon.setting-icon {
+  background-position: -47px 0; 
+}
+.menu-icon.block-video-icon{
+  background-position: 1px 0;
+}
+.block-video-icon.checked {
+  background-position: -117px 0;
+}
+.adt-icon-font{
+  background: url(img/adt.png) no-repeat;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 14px;
+  left: 20px;
+}
+.chart-icon-font{
+  background: url(img/chart.png) no-repeat;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  background-size: 18px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (-moz-min-device-pixel-ratio: 1.5),
+       only screen and (-o-min-device-pixel-ratio: 3/2),only screen and (min-device-pixel-ratio: 1.5) {
+        .checkbox-green,.block-icon,.setting-icon {
+          background: url(img/green@2x.png) no-repeat;
+          -webkit-background-size: 200px 16px;
+          background-size: 200px 16px;
+        }
+        .adt-icon-font {
+          background: url(img/adt@2x.png) no-repeat;
+          background-size: 16px 16px;
+        }
+        .chart-icon-font{
+          background: url(img/chart@2x.png) no-repeat;
+          background-size: 20px 20px;
+        }
+}
+#disable-block-text span strong,#disable-video-block-text span strong{
+  color: #ac0505;
+}
+#enable-block-text,#enable-video-block-text{
+  display: none;
+}
+
+#ad-statistic .title{
+  padding: 13px 10px 12px 41px;
+  font-size: 15px;
+  margin-left: 2px;
+}
+.share-content{
+  padding: 10px;
+  background-color: #f7f7f7;
+}
+.share-text{
+  font-size: 13px;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  color:#666600;
+}
+.st-data{
+  margin-top:5px;
+  margin-left: 4px; 
+  color: #565656;
+}
+.share-weibo-icon{
+  height: 31px;
+  display: inline-block;
+  width: 31px;
+  background: url(img/share.png) no-repeat;
+  cursor: pointer;
+  margin-left: 5px;
+  border: 1px dashed #999;
+}
+.share-weibo-icon.qq-zone{
+  background-position: -38px 0;
+}
+.share-weibo-icon.tenc-weibo{
+  background-position: -71px 0;
+}
+.share-weibo-icon.renren{
+  background-position: -104px 0;
+}
+.click-block-instructor{
+  padding: 5px;
+  color: #444;
+  font-size: 15px;
+  background: #f9f9f9;
+}
+.click-block{
+  display: none;
+}
+.click-block-instructor span{
+  display: block;
+  margin-left: 5px;
+}
+</style>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript" src="popup.js"></script>
+<script type="text/javascript" src="i18n.js"></script>
+</head>
+<body style="overflow: hidden;">
+          <!-- 选项菜单 -->
+          <div class="menu" id="menu">
+            <div class="header">
+              <i class="adt-icon-font"></i>
+              <div class="top">
+                <div class="title"><span class="i18n_stats_title"></span><strong style="margin-left:2px;max-width: 80px;display: inline-block;" class="total-block-ad">500</strong></div>
+                <i class="caret left"></i>
+              </div>
+              
+            </div>
+            <ul class="main-menu">
+              <li class="checkbox-hoverhook" style="border:none">
+                <div id="enable-block" class="menu-icon checkbox-green"></div>
+                <div class="menu-content">
+                  <span id="enable-block-text" class="menu-name"><span class="i18n_enabled_for_site"></span>
+                  </span>
+                  <span id="disable-block-text" class="menu-name"><span class="i18n_disabled_for_site"></span>
+                  </span>
+                </div>
+              </li>
+              <li class="click-block-video-hook">
+                <div class="menu-icon block-video-icon"></div>
+                <div class="menu-content">
+                  <span id="enable-video-block-text" class="menu-name"><span class="i18n_enabled_for_video"></span>
+                  </span>
+                  <span id="disable-video-block-text" class="menu-name"><span class="i18n_disabled_for_video"></span>
+                  </span>
+                </div>
+              </li>
+              <li class="click-block-hook">
+                <div class="menu-icon block-icon"></div>
+                <div class="menu-content">
+                  <span class="menu-name">
+                    <span class="i18n_easy_create_filter"></span>
+                  </span>
+                </div>
+              </li>
+              <li class="click-help-hook">
+                <div class="menu-icon help-icon"></div>
+                <div class="menu-content">
+                  <span class="menu-name">
+                    <span class="i18n_help_short"></span>
+                  </span>
+                </div>
+              </li>
+              <li class="option-hook">
+                <div class="menu-icon setting-icon"></div>
+                <div class="menu-content">
+                  <span class="menu-name">
+                    <span class="i18n_options_short"></span>
+                  </span>
+                </div>
+              </li>
+            </ul>
+            <div class="click-block">
+              <div class="click-block-instructor">
+                <span class="i18n_clickhide_instructions"></span>
+              </div>
+              <div id="click-block-cancel">
+                <div class="menu-icon cancel-icon"></div>
+                <span class="i18n_cancel"></span>
+              </div>
+              <div class="footer hover-lighter">
+                <div class="footer-content" id="help-block">
+                  <span class="menu-name"><i class="help-icon"></i><span class="i18n_block_help"></span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 分享界面-->
+          <div class="menu" id="ad-statistic" style="display:none">
+            <div class="header">
+              <i class="chart-icon-font"></i>
+              <div class="title">
+                <span class="i18n_ad_block_statistics"></span>
+              </div>
+            </div>
+
+            <div class="share-content">
+              <div class="st-data"><span class="i18n_current_page_statistics"></span> <strong class="current-block-ad">7</strong></div>
+              <div class="st-data"><span class="i18n_all_page_statistics"></span> <strong class="total-block-ad">50000</strong></div>
+              <div class="share-text">&#9825;<span class="i18n_share"></span></div>
+              <!-- 新浪微博 QQ空间 腾讯微博 人人 贴吧-->
+              <div>
+                <i class="share-weibo-icon hover-lighter sina-weibo"></i>
+                <i class="share-weibo-icon hover-lighter qq-zone"></i>
+                <i class="share-weibo-icon hover-lighter tenc-weibo"></i>
+                <i class="share-weibo-icon hover-lighter renren"></i>
+              </div>
+            </div>
+
+            <div class="footer">
+              <div class="footer-content">
+                <span class="menu-name"><i class="back-icon"></i><span class="i18n_back"></span></span>
+              </div>
+            </div>
+          </div>
+</body>
+</html>

@@ -1,0 +1,232 @@
+{
+   "add": {
+      "message": "\u6DFB\u52A0"
+   },
+   "add_domain_button": {
+      "message": "\u6DFB\u52A0\u57DF\u540D"
+   },
+   "add_filter_button": {
+      "message": "\u6DFB\u52A0\u8FC7\u6EE4\u89C4\u5219"
+   },
+   "add_filters_msg": {
+      "message": "\u6DFB\u52A0\u8FC7\u6EE4\u89C4\u5219\uFF1F"
+   },
+   "add_filters_info": {
+      "message": "\u70b9\u51fb\u6dfb\u52a0\u6309\u94ae\u540e\uff0c\u6269\u5c55\u5c06\u8fc7\u6ee4\u7ea2\u8272\u533a\u57df\u7684\u5185\u5bb9\u3002"
+   },
+   "add_your_own_filters": {
+      "message": "\u81EA\u5B9A\u4E49\u8FC7\u6EE4"
+   },
+   "apply_changes": {
+      "message": "\u5E94\u7528"
+   },
+   "block_element": {
+      "message": "\u5C4F\u853D\u6B64\u5143\u7D20"
+   },
+   "block_help": {
+      "message": "\u83b7\u53d6\u5e2e\u52a9"
+   },
+   "cancel": {
+      "message": "\u53D6\u6D88"
+   },
+   "clickhide_instructions": {
+      "message": "\u8bf7\u70b9\u51fb\u6216\u53f3\u51fb\u9875\u9762\u4e0a\u9700\u8981\u5c4f\u853d\u7684\u5143\u7d20"
+   },
+   "description": {
+      "message": "\u6e05\u9664\u7f51\u9875\u4e0a\u7684\u6240\u6709\u5e7f\u544a\uff1a\u6d6e\u52a8\u5e7f\u544a\uff0c\u8d2d\u7269\u5e7f\u544a\uff0c\u6076\u610f\u5f39\u7a97\uff0c\u8ddf\u8e2a\u4ee3\u7801\uff0c\u89c6\u9891\u5e7f\u544a\u3002\u8ba9\u4f60\u6d4f\u89c8\u7f51\u9875\u66f4\u5feb\u66f4\u6e05\u723d\u3002\u5e7f\u544a\u7ec8\u7ed3\u8005\uff0c\u4f60\u552f\u4e00\u9700\u8981\u7684\u5e7f\u544a\u63d2\u4ef6"
+   },
+   "disable_inline": {
+      "message": "\u5C4F\u853D\u5E7F\u544A\u94FE\u63A5"
+   },
+   "disabled_for_these_domains": {
+      "message": "\u767d\u540d\u5355\u4e2d\u7684\u7f51\u7ad9\u5c06\u4e0d\u4f1a\u88ab\u8fc7\u6ee4\u5e7f\u544a"
+   },
+   "easy_create_filter": {
+      "message": "\u65b0\u5efa\u8fc7\u6ee4\u89c4\u5219"
+   },
+   "edit_filters_raw": {
+      "message": "\u4EE5\u7EAF\u6587\u672C\u7F16\u8F91"
+   },
+   "enable_only_the": {
+      "message": "\u8bf7\u53ea\u8ba2\u9605\u4f60\u9700\u8981\u7684\u8fc7\u6ee4\u89c4\u5219\uff0c\u5f00\u542f\u8fc7\u591a\u4f1a\u4f7f\u6d4f\u89c8\u5668\u53d8\u6162\u3002\u53c2\u8003\u8be6\u7ec6\u003Ca\u003E\u89c4\u5219\u8ba2\u9605\u5efa\u8bae\u003C/a\u003E"
+   },
+   "enabled_for_site": {
+      "message": "\u5bf9\u8be5\u7f51\u7ad9\u5e7f\u544a\u8fc7\u6ee4"
+   },
+   "filter_lists": {
+      "message": "\u89c4\u5219\u8ba2\u9605"
+   },
+   "filter_must_follow_syntax": {
+      "message": "\u6dfb\u52a0\u81ea\u5b9a\u4e49\u8fc7\u6ee4\u89c4\u5219\u9700\u8981\u4e86\u89e3\u76f8\u5173\u7684\u003Ca\u003E\u89c4\u5219\u8bed\u6cd5\u003C/a\u003E"
+   },
+   "filters_acceptableAds2_label": {
+      "message": "\u5141\u8BB8\u4E00\u4E9B\u975E\u4FB5\u5165\u5F0F\u5E7F\u544A"
+   },
+   "filters_addSubscriptionAdd_label": {
+      "message": "\u6DFB\u52A0"
+   },
+   "filters_addSubscriptionOther_label": {
+      "message": "\u6DFB\u52A0\u5176\u4ED6\u8FC7\u6EE4\u89C4\u5219\u8BA2\u9605\u7EC4"
+   },
+   "filters_addSubscription_label": {
+      "message": "\u8ba2\u9605\u8fc7\u6ee4\u89c4\u5219"
+   },
+   "filters_readMore_label": {
+      "message": "\u6DF1\u5165\u4E86\u89E3"
+   },
+   "filters_subscription_delete_label": {
+      "message": "\u5220\u9664"
+   },
+   "filters_subscription_enabled_label": {
+      "message": "\u542F\u7528"
+   },
+   "filters_subscription_lastDownload_checksumMismatch": {
+      "message": "\u5931\u8D25\uFF0C\u68C0\u9A8C\u548C\u4E0D\u5339\u914D"
+   },
+   "filters_subscription_lastDownload_connectionError": {
+      "message": "\u5931\u8D25\uFF0C\u4E0B\u8F7D\u5931\u8D25"
+   },
+   "filters_subscription_lastDownload_inProgress": {
+      "message": "\u6B63\u5728\u4E0B\u8F7D\u2026\u2026"
+   },
+   "filters_subscription_lastDownload_invalidData": {
+      "message": "\u5931\u8D25\uFF0C\u4E0D\u662F\u6709\u6548\u7684\u8FC7\u6EE4\u89C4\u5219\u5217\u8868"
+   },
+   "filters_subscription_lastDownload_invalidURL": {
+      "message": "\u5931\u8D25\uFF0C\u4E0D\u662F\u6709\u6548\u5730\u5740"
+   },
+   "filters_viewList_label": {
+      "message": "\u67E5\u770B\u5217\u8868"
+   },
+   "firstRun_changelog": {
+      "message": "\u67e5\u770b\u66f4\u65b0\u5185\u5bb9"
+   },
+   "firstRun_dataCorruptionWarning": {
+      "message": "\u603B\u662F\u663E\u793A\u6B64\u9875\uFF1F\u003Ca\u003E\u70B9\u51FB\u8FD9\u91CC\uFF01\u003C/a\u003E"
+   },
+   "firstRun_features_heading": {
+      "message": "\u7528\u4E86 \u5e7f\u544a\u7ec8\u7ed3\u8005\uFF0C\u60A8\u53EF\u4EE5\uFF1A"
+   },
+   "firstRun_title_install": {
+      "message": "\u5e7f\u544a\u7ec8\u7ed3\u8005 \u5df2\u5b89\u88c5"
+   },
+   "firstRun_title_update": {
+      "message": "\u5e7f\u544a\u7ec8\u7ed3\u8005 \u5df2\u66f4\u65b0"
+   },
+   "general": {
+      "message": "\u5176\u4ed6\u8bbe\u7f6e"
+   },
+   "global_remove_subscription_warning": {
+      "message": "\u60A8\u786E\u5B9A\u8981\u79FB\u9664\u8BE5\u8FC7\u6EE4\u89C4\u5219\u8BA2\u9605\u7EC4\u5417\uFF1F"
+   },
+   "global_subscription_invalid_location": {
+      "message": "\u8FC7\u6EE4\u89C4\u5219\u5217\u8868\u7684\u4F4D\u7F6E\u4E0D\u662F\u6709\u6548\u7684 URL \u6216\u6709\u6548\u7684\u6587\u4EF6\u540D\u3002"
+   },
+   "last_updated_at": {
+      "message": "\u6700\u8FD1\u66F4\u65B0\u4E8E $time$ $date$",
+      "placeholders": {
+         "date": {
+            "content": "$2"
+         },
+         "time": {
+            "content": "$1"
+         }
+      }
+   },
+   "last_updated_at_today": {
+      "message": "\u6700\u8FD1\u66F4\u65B0\u4E8E $time$ \u4ECA\u65E5",
+      "placeholders": {
+         "time": {
+            "content": "$1"
+         }
+      }
+   },
+   "name": {
+      "message": "\u5e7f\u544a\u7ec8\u7ed3\u8005"
+   },
+   "new_filters_added": {
+      "message": "\u60A8\u5DF2\u6DFB\u52A0\u8FC7\u6EE4\u89C4\u5219\u3002 \u8BF7\u81F3\u003Ca id='options_url' target='_blank'\u003E\u5e7f\u544a\u7ec8\u7ed3\u8005\u9009\u9879\u003C/a\u003E \u7BA1\u7406\u8FC7\u6EE4\u89C4\u5219\u3002"
+   },
+   "options": {
+      "message": "\u8BBE\u7F6E\u9009\u9879"
+   },
+   "out_of_date_lists": {
+      "message": "\u8fc7\u6ee4\u89c4\u5219\u4f1a\u81ea\u52a8\u8054\u7f51\u66f4\u65b0"
+   },
+   "overlay_hideplaceholders_label": {
+      "message": "\u9690\u85CF\u5DF2\u5C4F\u853D\u5143\u7D20\u7684\u5360\u4F4D\u7B26"
+   },
+   "show_video_tips_banner": {
+      "message": "\u542f\u7528\u89c6\u9891\u5e7f\u544a\u8fc7\u6ee4"
+   },
+   "remove_button": {
+      "message": "\u5220\u9664\u9009\u4e2d\u89c4\u5219"
+   },
+   "remove_domain_button": {
+      "message":"\u5220\u9664\u57df\u540d"
+   },
+   "show_block_element_menu": {
+      "message": "\u53f3\u952e\u83dc\u5355\u663e\u793a\u201c\u5c4f\u853d\u6b64\u5e7f\u544a\u201d"
+   },
+   "show_icon": {
+      "message": "\u5728\u5730\u5740\u680f\u663e\u793a\u56fe\u6807"
+   },
+   "stats_title": {
+      "message": "\u5df2\u5c4f\u853d"
+   },
+   "enabled_for_site": {
+      "message": "\u5bf9\u8be5\u7f51\u7ad9\u8fc7\u6ee4\u003Cstrong\u003E\u542f\u7528\u003C/strong\u003E"
+   },
+   "disabled_for_site": {
+      "message": "\u5bf9\u8be5\u7f51\u7ad9\u8fc7\u6ee4\u003Cstrong\u003E\u5173\u95ed\u003C/strong\u003E"
+   },
+   "enabled_for_video": {
+      "message": "\u8fc7\u6ee4\u589e\u5f3a\u811a\u672c<strong>\u542f\u7528</strong>"
+   },
+   "disabled_for_video": {
+      "message": "\u8fc7\u6ee4\u589e\u5f3a\u811a\u672c<strong>\u5173\u95ed</strong>"
+   },
+   "easy_create_filter": {
+      "message": "\u624b\u52a8\u5c4f\u853d\u7f51\u7ad9\u5e7f\u544a"
+   },
+   "help_short": {
+      "message": "\u5e2e\u52a9\u4e0e\u652f\u6301"
+   },
+   "options_short": {
+      "message": "\u8bbe\u7f6e\u9009\u9879"
+   },
+   "ad_block_statistics": {
+      "message": "\u5e7f\u544a\u62e6\u622a\u7edf\u8ba1"
+   },
+   "current_page_statistics": {
+      "message": "\u5f53\u524d\u7f51\u9875"
+   },
+   "all_page_statistics": {
+      "message": "\u7d2f\u8ba1\u62e6\u622a"
+   },
+   "share": {
+      "message": "\u5206\u4eab\u7ed9\u597d\u53cb"
+   },
+   "back": {
+      "message": "\u8fd4\u56de"
+   },
+
+   "subscriptionSelection_location_label": {
+      "message": "\u8fc7\u6ee4\u89c4\u5219\u94fe\u63a5:"
+   },
+   "subscriptionSelection_subscriptionSelector_label": {
+      "message": "\u4ece\u5217\u8868\u4e2d\u9009\u62e9\u8981\u8ba2\u9605\u7684\u8fc7\u6ee4\u89c4\u5219:"
+   },
+   "subscriptionSelection_title_label": {
+      "message": "\u8fc7\u6ee4\u89c4\u5219\u6807\u9898:"
+   },
+   "update_now": {
+      "message": "\u7ACB\u5373\u66F4\u65B0"
+   },
+   "whitelisted_domains": {
+      "message": "\u7f51\u7ad9\u767d\u540d\u5355"
+   },
+   "help_and_support": {
+      "message": "\u5e2e\u52a9\u4e0e\u652f\u6301"
+   }
+}

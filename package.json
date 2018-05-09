@@ -1,0 +1,22 @@
+{
+  "name": "ExtensionHelper",
+  "description": "ShanYing Extension Helper",
+  "version": "1.0.0",
+  "author": "leung<leungjianjun@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url" : "https://github.com/leungjianjun/shanying"
+  },
+  "dependencies": {
+    "gulp": "~3.8.11",
+    "through2": "~0.6.3",
+    "gulp-util": "~3.0.4",
+    "uglify-js": "~2.6.2",
+    "clean-css":"~3.4.10",
+    "html-minifier":"~1.3.1",
+    "archiver":"~0.21.0"
+  },
+  "scripts": {
+    "start": "gulp"
+  }
+}

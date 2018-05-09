@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+
+/* Turn on a 16x16 scrollbar */
+::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+
+/* Turn on single button up on top, and down on bottom */
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    display: block;
+}
+
+/* Turn off the down area up on top, and up area on bottom */
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement {
+    display: none;
+}
+
+/* Place The scroll down button at the bottom */
+::-webkit-scrollbar-button:end:increment {
+    background-image: url(img/scroll_cntrl_dwn.png);
+}
+
+/* Place The scroll up button at the up */
+::-webkit-scrollbar-button:start:decrement {
+    background-image: url(img/scroll_cntrl_up.png);
+}
+
+/* Top area above thumb and below up button */
+::-webkit-scrollbar-track-piece:vertical:start {
+    background-image: url(img/scroll_gutter_top.png), url(img/scroll_gutter_mid.png);
+    background-repeat: no-repeat, repeat-y;
+}
+
+/* Bottom area below thumb and down button */
+::-webkit-scrollbar-track-piece:vertical:end {
+    background-image: url(img/scroll_gutter_btm.png), url(img/scroll_gutter_mid.png);
+    background-repeat: no-repeat, repeat-y;
+    background-position: bottom left, 0 0;
+}
+
+/* The thumb itself */
+::-webkit-scrollbar-thumb:vertical {
+    height: 56px;
+    -webkit-border-image: url(img/scroll_thumb.png) 8 0 8 0 stretch stretch;
+    border-width: 8 0 8 0;
+}
+
+</style>
+<style type="text/css" media="screen">
+html{
+	background-color: #333;
+}
+#debugInfo{
+	width: 100%;
+	height: 500px;
+	overflow-y: scroll;
+	padding: 20px 10px 80px 10px;
+	background-color: #272822;
+	border-left: 1px solid #191919;
+	border-right: 1px solid #191919;
+}
+#debugInfo span{
+	display: block;
+	margin: 1px 0;
+	word-wrap:break-word;
+}
+span.request:before{
+	content: "请求 \00a0\00a0\00a0:";
+	display: inline-block;
+	color: #e6db74;
+}
+span.request{
+	color: #f8f8f2;
+}
+span.block{
+background-color: #ffcbd4;
+}
+span.redirect{
+	background-color: #c2ffc2;
+}
+span.block:before{
+	content: "禁止 \00a0\00a0\00a0:";
+	display: inline-block;
+
+}
+span.redirect:before{
+	content: "重定向:";
+	display: inline-block;
+}
+.topbar{
+	width: 100%;
+	height: 50px;
+	background: #595959;
+	border-bottom: 1px solid #444444;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+body{
+	background: #e5e9ec;
+	margin: 0;
+	font-size: 15px;
+line-height: 1.42857143;
+	padding: 0;
+}
+.content{
+	margin-top: 50px;
+	background-color: #1e1e1e;
+}
+.wrap{
+	width: 980px;
+	margin: 0 auto;
+}
+.debug{
+}
+a{
+	text-decoration: none;
+}
+.brand{
+	float: left;
+padding: 15px;
+font-size: 18px;
+line-height: 20px;
+height: 50px;
+color: #777;
+}
+.topbar ul{
+	list-style: none;
+	margin: 0;
+	float: left;
+	padding-left:5px;
+}
+.topbar ul>li{
+	float: left;
+}
+
+.topbar ul li:first-child{
+	margin-right: 15px;
+}
+
+button{
+	color: #b1d3d3;
+background: #555;
+background: -webkit-gradient(linear, 0 0, 0 100%, from(#636363), to(#555555));
+border-color: #ccc;
+font-weight: 400;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+border: 1px solid #383838;
+white-space: nowrap;
+padding: 5px 11px;
+font-size: 14px;
+line-height: 1.42857143;
+border-radius: 4px;
+display: inline-block;
+margin-top: 10px;
+}
+button:hover{
+	color:#fefefe;
+	opacity: .8;
+}
+</style>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript" src="debug.js"></script>
+</head>
+<body>
+	<div class="topbar">
+		<div class="">
+			<ul>
+				<li><button title="关闭调试" id="close-debug"><red>x</red></button></li>
+				<li><button id="start-capture">开始捕获</button></li>
+				<li><button id="stop-capture">停止捕获</button></li>
+				<li><button id="clearcontent">清空内容</button></li>
+			</ul>
+		</div>
+	</div>
+	<div class="content">
+		<div class="wrap">
+			<div class="debug">
+				<div id="debugInfo">
+				</div>
+				<div class="debug-op" style="float: right;">
+					
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+</body>
+</html>
